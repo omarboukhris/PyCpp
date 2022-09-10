@@ -1,0 +1,14 @@
+
+%import "tokens.grm"
+
+importfile ->
+	lt. path gt. |
+	dqu. path dqu.
+
+path ->
+    pt. antisl. |
+    parentdir. antisl. |
+	identifier. antisl. |
+	identifier. headext. |
+	identifier. |
+[]
