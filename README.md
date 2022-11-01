@@ -3,18 +3,12 @@
 
 This is a python project, using parselib, used to automatically generate C++ classes with python ctypes interface.
 
-# Build instructions
+# Dependencies
 
-for the python gateway to work, ctype needs to know where to locate the appropriate .so file.
-In pyparse.py it is linked to build/parselib.so.
+```bash
+$ pip install git+https://github.com/omarboukhris/pyparse
+```
 
-To build it, these are the instructions to compile it :
-```
-mkdir build
-cd build
-cmake ../..
-make -j12
-```
 
 # Parselib Python interface 
 
@@ -23,7 +17,7 @@ The C++ parselib interface is exposed in python using ctypes.
 An example of use could be
 
 ```python
->> > from parsesession import ParseSession
+>> > from pyparse.pyparse import ParseSession
 
 >> > psess = ParseSession()
 
@@ -46,7 +40,7 @@ processing: data / test / gram.grm
 This script loops through recursively globbed files and apply TemplateGenerator on each file correctly parsed
 
 ```python
-from PyCpp.parsesession import ParseSession
+from pyparse.pyparse import ParseSession
 from PyCpp.observers import HppGenerator, TemplGenerator
 from PyCpp.utils import pycppeng
 
@@ -110,13 +104,6 @@ The easiest way to do it is via pip:
 $ pip install PyQt6
 ```
 It is highly recommended to do it in a virtual environment
-
-
-
-
-
-
-
 
 
 
